@@ -50,6 +50,7 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         border-radius: 10px;
         font-weight: bold;
+        font-size: 0.875rem; // 14px
     }
 
     button:hover {
@@ -78,6 +79,12 @@ const GlobalStyle = createGlobalStyle`
         font-size: 0.813rem; // 13px
         font-weight: 400;
         line-height: 20px;        
+    }
+
+    p {
+        font-size: 0.938rem; // 15px
+        font-weight: 400;
+        line-height: 25px;
     }
 
 `;

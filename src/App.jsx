@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Header from './components/Header/Header';
 import SearchBar from './components/Search/SearchBar';
+import UserProfile from './components/Profile/UserProfile';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <Main>
       <Header />
       <SearchBar />
+      <UserProfile />
     </Main>
   );
 }
