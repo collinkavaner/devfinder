@@ -18,7 +18,7 @@ function App() {
     .catch(error => console.log(error));
 
   }
-  console.log(userData);
+  //console.log(userData);
 
   return(
     <Main>

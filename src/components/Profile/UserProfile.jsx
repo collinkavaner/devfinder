@@ -18,19 +18,19 @@ function UserProfile({ userData }) {
                 </p>
                 <UserStats userData={userData} />
                 <ul>
-                    <li className={userData.location === null && "not-available"}><FaMapMarkerAlt className="icon-size" />
+                    <li className={userData.location === null ? "not-available" : ""}><FaMapMarkerAlt className="icon-size" />
                     {
                         userData.location === null ? "Not Available" : userData.location
                     }</li>
-                    <li className={userData.blog === '' && "not-available"}><FaLink className="icon-size" />
+                    <li className={userData.blog === '' ? "not-available" : ""}><FaLink className="icon-size" />
                     {
                         userData.blog === '' ? "Not Available" : userData.blog
                     }</li>
-                    <li className={userData.twitter_username === null && "not-available"}><FaTwitter className="icon-size" />
+                    <li className={userData.twitter_username === null ? "not-available" : ""}><FaTwitter className="icon-size" />
                     {
                         userData.twitter_username === null ? "Not Available" : userData.twitter_username
                     }</li>
-                    <li className={userData.company === null && "not-available"}><FaBuilding className="icon-size" />
+                    <li className={userData.company === null ? "not-available" : ""}><FaBuilding className="icon-size" />
                     {
                         userData.company === null ? "Not Available" : userData.company
                     }</li>

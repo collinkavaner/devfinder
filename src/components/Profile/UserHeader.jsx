@@ -6,7 +6,8 @@ function UserHeader({ userData }) {
             <img src={userData.avatar_url} alt={userData.name} />
             <div>
                 <h3>{userData.name}</h3>
-                <h4 className="username">@<a className="username" href={userData.html_url} target="_blank">{userData.login}</a></h4>
+                <h4 className="username">
+                <a className="username" href={userData.html_url} target="_blank">{userData.login}</a></h4>
                 <h4>Joined {new Date(userData.created_at).getFullYear()}</h4>
             </div>
         </UserHeaderMain>
