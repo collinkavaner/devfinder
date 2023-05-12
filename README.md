@@ -1,2 +1,3 @@
-# Created with React and Styled Components
-# devfinder - frontend mentor project
+# devfinder
+Created with React and Styled Components
+A frontend mentor project
