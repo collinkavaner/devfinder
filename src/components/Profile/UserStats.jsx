@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-function UserStats() {
+function UserStats({ userData }) {
     return (
         <UserStatsMain>
             <div className="stat">
                 <h4>Repos</h4>
-                <p>2</p>
+                <p>{userData.public_repos}</p>
             </div>
             <div className="stat">
                 <h4>Followers</h4>
-                <p>1</p>
+                <p>{userData.followers}</p>
             </div>
             <div className="stat">
                 <h4>Following</h4>
-                <p>2</p>
+                <p>{userData.following}</p>
             </div>
         </UserStatsMain>
     );
@@ -41,7 +41,7 @@ const UserStatsMain = styled.div`
 
         p {
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 900;
         }
     }
 `;

@@ -1,11 +1,21 @@
 import styled from "styled-components";
+import { useState } from "react";
 import searchIconSource from "../../assets/search.svg";
 
-function SearchBar() {
+function SearchBar({ searchTerm }) {
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearch = (event) => {
+        event.preventDefault();
+        searchTerm(searchValue)
+    }
+
     return (
-        <SearchBarMain>
+        <SearchBarMain onSubmit={handleSearch}>
             <img src={searchIconSource} alt="" />
-            <input type="text" placeholder="Search GitHub username..." />
+            <input type="text" placeholder="Search GitHub username..." 
+            value={searchValue} onChange={(event) => setSearchValue(event.target.value)}
+            />
             <button>Search</button>
         </SearchBarMain>
     );
@@ -13,13 +23,13 @@ function SearchBar() {
 
 export default SearchBar;
 
-const SearchBarMain = styled.div`
+const SearchBarMain = styled.form`
     display: flex;
     align-items: center;
     gap: 5px;
     height: 60px;
     margin-top: 32px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 15px;
     background-color: #1E2A47;
 

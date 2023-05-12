@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-function UserHeader() {
+function UserHeader({ userData }) {
     return (
         <UserHeaderMain>
-            <img src="https://avatars.githubusercontent.com/u/55768790?v=4" alt="" />
+            <img src={userData.avatar_url} alt={userData.name} />
             <div>
-                <h3>Collin Kavaner</h3>
-                <h4 className="username">@collinkavaner</h4>
-                <h4>Joined 2019</h4>
+                <h3>{userData.name}</h3>
+                <h4 className="username">@<a className="username" href={userData.html_url} target="_blank">{userData.login}</a></h4>
+                <h4>Joined {new Date(userData.created_at).getFullYear()}</h4>
             </div>
         </UserHeaderMain>
     );
@@ -37,6 +37,7 @@ const UserHeaderMain = styled.div`
 
         .username {
             color: #0079FF;
+            text-decoration: none;
         }
     }
 `;

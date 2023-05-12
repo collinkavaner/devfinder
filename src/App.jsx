@@ -6,11 +6,27 @@ import UserProfile from './components/Profile/UserProfile';
 
 function App() {
 
+  const [userData, setUserData] = useState({});
+
+  const searchTerm = (search) => {
+    
+    fetch(`https://api.github.com/users/${search}`)
+    .then(response => response.json())
+    .then(data => {
+      setUserData(data);
+    })
+    .catch(error => console.log(error));
+
+  }
+  console.log(userData);
+
   return(
     <Main>
       <Header />
-      <SearchBar />
-      <UserProfile />
+      <SearchBar searchTerm={searchTerm} />
+      {
+        Object.keys(userData).length !== 0 && <UserProfile userData={userData} />
+      }
     </Main>
   );
 }
