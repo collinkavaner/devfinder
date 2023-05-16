@@ -5,15 +5,15 @@ function UserStats({ userData }) {
         <UserStatsMain>
             <div className="stat">
                 <h4>Repos</h4>
-                <p>{userData.public_repos}</p>
+                <h2>{userData.public_repos}</h2>
             </div>
             <div className="stat">
                 <h4>Followers</h4>
-                <p>{userData.followers}</p>
+                <h2>{userData.followers}</h2>
             </div>
             <div className="stat">
                 <h4>Following</h4>
-                <p>{userData.following}</p>
+                <h2>{userData.following}</h2>
             </div>
         </UserStatsMain>
     );
@@ -35,13 +35,19 @@ const UserStatsMain = styled.div`
         align-items: center;
         gap: 5px;
 
-        h4 {
-            font-size: 11px;
-        }
-
-        p {
-            font-size: 16px;
+        h2 {
             font-weight: 900;
         }
+    }
+
+    @media (min-width: 768px) {
+        justify-content: space-between;
+        padding-right: 100px;
+        padding-left: 45px;
+
+        .stat {
+            align-items: flex-start;
+        }
+
     }
 `;

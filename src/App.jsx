@@ -34,5 +34,15 @@ function App() {
 export default App
 
 const Main = styled.main`
+  max-width: 485px;
+  margin: 0 auto;
   padding: 32px 24px;
+
+  @media (min-width: 768px) {
+    max-width: 620px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 800px;
+  }
 `;

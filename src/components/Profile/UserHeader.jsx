@@ -5,10 +5,14 @@ function UserHeader({ userData }) {
         <UserHeaderMain>
             <img src={userData.avatar_url} alt={userData.name} />
             <div>
-                <h3>{userData.name}</h3>
-                <h4 className="username">
-                <a className="username" href={userData.html_url} target="_blank">{userData.login}</a></h4>
-                <h4>Joined {new Date(userData.created_at).getFullYear()}</h4>
+                <div className="name-date">
+                    <h1>{userData.name}</h1>
+                    <p className="desktop-join-date">Joined {new Date(userData.created_at).toLocaleDateString("en-US", { dateStyle: "medium" })}</p>
+                </div>
+                <h3>
+                <a className="username" href={userData.html_url} target="_blank">{userData.login}</a>
+                </h3>
+                <p className="join-date">Joined {new Date(userData.created_at).toLocaleDateString("en-US", { dateStyle: "medium" })}</p>
             </div>
         </UserHeaderMain>
     );
@@ -30,15 +34,68 @@ const UserHeaderMain = styled.div`
     div {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 2px;
 
-        h3 {
+        h1 {
             font-weight: bold;
         }
 
+        .name-date {
+            min-width: 100%;
+        }
+        .desktop-join-date {
+            display: none;
+        }
+
+        .join-date {
+            display: block;
+        }
+
         .username {
+            font-size: 13px;
             color: #0079FF;
             text-decoration: none;
+        }
+    }
+
+    @media (min-width: 768px) {
+        gap: 30px;
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
+
+        div {
+            gap: 5px;
+
+            .username {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        img {
+            display: none;
+        }
+
+        div {
+            .name-date {
+                min-width: 500px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .desktop-join-date {
+                display: block;
+            }
+
+            .join-date {
+                display: none;
+            }
         }
     }
 `;

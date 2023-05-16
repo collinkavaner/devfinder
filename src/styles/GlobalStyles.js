@@ -44,13 +44,14 @@ const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+        height: 100%;
         padding: 10px 15px;
         background-color: #0079FF;
         color: #fff;
         border: none;
         border-radius: 10px;
         font-weight: bold;
-        font-size: 0.875rem; // 14px
+        font-size: 1rem; // 16px
     }
 
     button:hover {
@@ -78,13 +79,51 @@ const GlobalStyle = createGlobalStyle`
     h4 {
         font-size: 0.813rem; // 13px
         font-weight: 400;
-        line-height: 20px;        
+        line-height: 20px;      
     }
 
     p {
         font-size: 0.938rem; // 15px
         font-weight: 400;
         line-height: 25px;
+    }
+
+    .not-available {
+        color: #8B949E;
+        fill: #8B949E;
+    }
+
+
+    @media screen and (max-width: 767px) {
+
+        h1 {
+            font-size: 1rem; // 16px
+            font-weight: 700;
+            line-height: 26px;
+        }
+
+        h2 {
+            font-size: 1rem; // 16px
+            font-weight: 700;
+            line-height: 22px;
+        }
+
+        h4 {
+            font-size: 0.688rem; // 11px
+            font-weight: 400;
+            line-height: 21px;        
+        }
+
+        p {
+            font-size: 0.813rem; // 13px
+            font-weight: 400;
+            line-height: 21px;
+        }
+
+        button {
+            font-size: 0.875rem; // 14px
+        }
+
     }
 
 `;

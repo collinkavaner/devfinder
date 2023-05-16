@@ -13,7 +13,7 @@ function SearchBar({ searchTerm }) {
     return (
         <SearchBarMain onSubmit={handleSearch}>
             <img src={searchIconSource} alt="" />
-            <input type="text" placeholder="Search GitHub username..." 
+            <input type="text" placeholder="Search GitHub username" 
             value={searchValue} onChange={(event) => setSearchValue(event.target.value)}
             />
             <button>Search</button>
@@ -43,7 +43,6 @@ const SearchBarMain = styled.form`
         width: 100%;
         outline: none;
         border: none;
-        border-radius: 15px;
         font-size: 13px;
         font-weight: 500;
         color: #fff;
@@ -53,5 +52,27 @@ const SearchBarMain = styled.form`
     input::placeholder {
         color: #fff;
         font-size: 13px;
+    }
+
+    @media (min-width: 768px) {
+        height: 69px;
+
+        input {
+            font-size: 1.125rem;
+        }
+
+        input::placeholder {
+            font-size: 1.125rem;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin: 10px 15px;
+        }
+
+        button {
+            padding: 15px 25px;
+        }
     }
 `;
