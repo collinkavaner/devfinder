@@ -27,7 +27,8 @@ const UserStatsMain = styled.div`
     gap: 20px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #141D2F;
+    background-color: ${({ theme }) => theme.bgPrimary};
+    transition: background 0.2s ease-in;
 
     .stat {
         display: flex;

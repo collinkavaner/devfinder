@@ -21,8 +21,9 @@ const GlobalStyle = createGlobalStyle`
         font-size: 0.938rem; // 15px
         font-weight: 400;
         min-height: 100vh;
-        background: #141D2F;
-        color: #fff;
+        background: ${({ theme }) => theme.bgPrimary};
+        color: ${({ theme }) => theme.text};
+        transition: background 0.2s ease-in, color 0.2s ease-in;
     }
 
     img, picture, video, canvas, svg {
@@ -91,6 +92,17 @@ const GlobalStyle = createGlobalStyle`
     .not-available {
         color: #8B949E;
         fill: #8B949E;
+    }
+
+    .toggle-theme {
+        color: ${({ theme }) => theme.text};
+        transition: color 0.2s ease-in;
+    }
+
+    .toggle-theme:hover {
+        background-color: ${({ theme }) => theme.bgSecondary};
+        box-shadow: ${({ theme }) => theme.dropShadow};
+        transition: background 0.2s ease-in, box-shadow 0.2s ease-in;
     }
 
 

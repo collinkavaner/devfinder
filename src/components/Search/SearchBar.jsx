@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import searchIconSource from "../../assets/search.svg";
 
-function SearchBar({ searchTerm }) {
+function SearchBar({ searchTerm, theme }) {
     const [searchValue, setSearchValue] = useState('');
 
     const handleSearch = (event) => {
@@ -31,7 +31,9 @@ const SearchBarMain = styled.form`
     margin-top: 32px;
     padding: 8px;
     border-radius: 15px;
-    background-color: #1E2A47;
+    background-color: ${({ theme }) => theme.bgSecondary};
+    box-shadow: ${({ theme }) => theme.dropShadow};
+    transition: background 0.2s ease-in, box-shadow 0.2s ease-in;
 
     img {
         width: 20px;
@@ -45,13 +47,15 @@ const SearchBarMain = styled.form`
         border: none;
         font-size: 13px;
         font-weight: 500;
-        color: #fff;
-        background-color: #1E2A47;
+        color: ${({ theme }) => theme.text};
+        background-color: ${({ theme }) => theme.bgSecondary};
+        transition: background 0.2s ease-in, color 0.2s ease-in;
     }
 
     input::placeholder {
-        color: #fff;
+        color: ${({ theme }) => theme.text};
         font-size: 13px;
+        transition: color 0.2s ease-in;
     }
 
     @media (min-width: 768px) {

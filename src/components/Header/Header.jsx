@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import ColorMode from "./ColorMode";
 
-function Header() {
+function Header({ theme, toggleTheme }) {
     return (
         <HeaderMain>
             <h1>devfinder</h1>
-            <ColorMode />
+            <ColorMode theme={theme} toggleTheme={toggleTheme} />
         </HeaderMain>
     );
 }
