@@ -53,8 +53,10 @@ const UserHeaderMain = styled.div`
 
         .username {
             font-size: 13px;
-            color: #0079FF;
-            text-decoration: none;
+        }
+
+        .username:hover {
+            color: #60ABFF;
         }
     }
 

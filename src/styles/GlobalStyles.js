@@ -43,6 +43,11 @@ const GlobalStyle = createGlobalStyle`
         isolation: isolate;
     }
 
+    a {
+        color: #0079FF;
+        text-decoration: none;
+    }
+
     button {
         cursor: pointer;
         height: 100%;

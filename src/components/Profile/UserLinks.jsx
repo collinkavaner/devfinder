@@ -4,7 +4,12 @@ import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaLink } from "react-icons/fa";
 
-function UserLinks({ userData }) {
+function UserLinks({ userData, theme }) {
+
+    const parseUrl = (url) => {
+        return url.replace(/(^\w+:|^)\/\//, '');
+    }
+
     return (
         <UserLinksMain>
             <article>
@@ -13,13 +18,13 @@ function UserLinks({ userData }) {
                     userData.location === null ? "Not Available" : userData.location
                 }</p></div>
                 <div className={userData.blog === '' ? "not-available" : ""}><FaLink className="icon-size" />
-                <p>{
+                <a href={`https://${parseUrl(userData.blog)}`} target="_blank">{
                     userData.blog === '' ? "Not Available" : userData.blog
-                }</p></div>
+                }</a></div>
                 <div className={userData.twitter_username === null ? "not-available" : ""}><FaTwitter className="icon-size" />
-                <p>{
+                <a href={`https://twitter.com/${userData.twitter_username}`} target="_blank">{
                     userData.twitter_username === null ? "Not Available" : userData.twitter_username
-                }</p></div>
+                }</a></div>
                 <div className={userData.company === null ? "not-available" : ""}><FaBuilding className="icon-size" />
                 <p>{
                     userData.company === null ? "Not Available" : userData.company
@@ -44,6 +49,15 @@ const UserLinksMain = styled.div`
             display: flex;
             align-items: center;
             gap: 15px;
+
+            a {
+                color: ${({ theme }) => theme.text};
+                transition: color 0.2s ease-in;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
         }
     }
 
