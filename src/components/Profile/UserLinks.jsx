@@ -18,13 +18,13 @@ function UserLinks({ userData, theme }) {
                     userData.location === null ? "Not Available" : userData.location
                 }</p></div>
                 <div className={userData.blog === '' ? "not-available" : ""}><FaLink className="icon-size" />
-                <a href={`https://${parseUrl(userData.blog)}`} target="_blank">{
-                    userData.blog === '' ? "Not Available" : userData.blog
-                }</a></div>
+                <p>{
+                    userData.blog === '' ? "Not Available" : <a href={`https://${parseUrl(userData.blog)}`} target="_blank">{userData.blog}</a>
+                }</p></div>
                 <div className={userData.twitter_username === null ? "not-available" : ""}><FaTwitter className="icon-size" />
-                <a href={`https://twitter.com/${userData.twitter_username}`} target="_blank">{
-                    userData.twitter_username === null ? "Not Available" : userData.twitter_username
-                }</a></div>
+                <p>{
+                    userData.twitter_username === null ? "Not Available" : <a href={`https://twitter.com/${userData.twitter_username}`} target="_blank">{userData.twitter_username}</a>
+                }</p></div>
                 <div className={userData.company === null ? "not-available" : ""}><FaBuilding className="icon-size" />
                 <p>{
                     userData.company === null ? "Not Available" : userData.company
